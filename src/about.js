@@ -1,36 +1,65 @@
 Vue.component('v-about', {
-	template: `<div v-show="show">
-		<div class="other">
+    template: `<div v-show="show">
+		<div class="other qian">
 			<div class="o-bg">
 				<h1 style="margin-top:40px;">{{title}}</h1>
-				<div v-for="(_message, _t) of message">
-					<h3 >{{_t}}</h3>
-					<p v-for="mes of _message">{{mes}}</p>
+				<div class="line1"> 2017年1月30日是我们认识的第一天，到今天已与小仙女相识<br>
+
+				<span class="line2"> {{day}} 天 {{hour}} 时 {{min}} 分 {{mins}} 秒</span><br>
+
 				</div>
 			</div>
 		</div>
 	</div>`,
-	props: ['show'],
-	data: function () {
-		return {
-			title: "关于／About",
-			message: {
-				"关于本站":[
-						"模仿学习中"
-					// "这只是一个静态页面",
-					// "一个关于前端技术的博客",
-					// "主要用于我自己的个人宣传",
-					// "因为现在在找工作，所以又多了一个找工作的功能",
-					// "找不到工作的话，我希望他又会多一个功能，帮我接接外包"
-				],
-				"关于我":[
-						"模仿学习中"
-					// "工作三年",
-					// "毕业以后一直待在一家非著名公司",
-					// "一直呕心沥血，一直积极向上，一直发奋图强",
-					// "于是现在开始找工作"
-				]
-			}
-		}
-	}
+    props: ['show'],
+
+    methods: {
+        computeTime: function() {
+
+			var _this = this;
+
+			setInterval(function(){
+				var nowTime = +new Date(),
+	                // startTime = new Date(1485777600000); // 2017-01-30-20-00-00
+	                startTime = new Date(1485705600000); // 2017-01-30-00-00-00
+
+	            var sumTime = nowTime - startTime,
+					day = Math.floor(sumTime / 86400000),
+					dayMis = 86400000*day,
+					hour =  Math.floor((sumTime - dayMis)/3600000),
+					hourMis = hour*3600000,
+					min = Math.floor((sumTime - dayMis - hourMis)/60000);
+					minMis = min*60000,
+					mis =  Math.floor((sumTime - dayMis - hourMis -minMis)/1000);
+
+				// console.log(day, hour,min,mis);
+				_this.day = day;
+				_this.hour = hour;
+				_this.min = min;
+				_this.mins = mis;
+			}, 100);
+
+
+
+
+
+        }
+    },
+    mounted: function() {
+		// setInterval(this.computeTime(), 100);
+        this.computeTime();
+    },
+    data: function() {
+        return {
+            title: "纪念日／Anniversary",
+            data: {
+
+
+            },
+			day: 0,
+			hour: 0,
+			min: 0,
+			mins: 0
+        }
+    }
 });

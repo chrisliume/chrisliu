@@ -22,8 +22,7 @@ Vue.component('v-home', {
 			check_last: -1,
 			bg_src: "background-image: url('img/bg2.jpeg?dd')",
 			keys: ["早睡早起","常做运动"],
-			// keys_last: ["多","与","异","性","交","朋","友"],
-			keys_last: ["多","出","门","走","走"],
+			keys_last: ["以","梦","为","马","，","莫","负","韶","华"],
 			show_key: [],
 			show_key_last: [],
 			timer_keys_last: null,
@@ -45,7 +44,7 @@ Vue.component('v-home', {
 		},
 		show_keys_last: function(){
 			this.check_last ++;
-			if(this.check_last >= 7){
+			if(this.check_last >= 9){
 				clearTimeout(this.timer_keys_last);
 				return;
 			}

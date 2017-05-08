@@ -7,7 +7,7 @@ Vue.component('v-article', {
 				</li>
 			</ul>
 			<div class="a-right">
-				<div v-for="(_ar, key, index) in article">
+				<div v-for="(_ar, key, index) in article" :key="index">
 					<a :name="'name'+index" class="a-title">{{key}}</a>
 					<a v-for="ari of _ar" :href="ari.url" target="_blank">
 					{{ari.name}}
@@ -20,59 +20,51 @@ Vue.component('v-article', {
 	data: function () {
 		var data = {
 			article:{
-				"偏界面类": [{
-					name: "初学canvas仿知乎登录页面动画",
-					url:"https://mp.weixin.qq.com/s/e5aCrcYXjtl5msclPyDMgA"
+				"JavaScript": [{
+									name: "JavaScript 标准参考",
+									url:"http://javascript.ruanyifeng.com/"
+								},
+								{
+									name: "ECMAScript 6",
+									url:"http://es6.ruanyifeng.com/"
+								},
+								{
+									name: "jQuery api",
+									url:"http://caibaojian.com/jquery/"
+								},
+								{
+									name: "No JQuery! 原生 JavaScript 操作 DOM",
+									url:"https://juejin.im/entry/58eb2ac761ff4b006b586c8a"
+								}
+					],
+				"css相关布局": [{
+					name: "移动端常见问题总结",
+					url:"https://github.com/hoosin/mobile-web-favorites"
 				},{
-					name:"要多简单就有多简单的H5拍照加水印",
-					url:"https://segmentfault.com/a/1190000007098531"
+					name:"css五种方式实现Footer置底",
+					url:"http://liaokeyu.com/%E6%8A%80%E6%9C%AF/2017/01/06/%E8%AF%91-CSS%E4%BA%94%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0Footer%E7%BD%AE%E5%BA%95.html"
 				},{
-					name: "教你五分钟入门使用html5 svg绘制图形",
-					url:"https://segmentfault.com/a/1190000006235626"
+					name: "常见的布局方式",
+					url:"https://segmentfault.com/a/1190000008789039tps://segmentfault.com/a/1190000005870557"
 				},{
-					name:"css3实现3d答案之书翻阅",
-					url:"https://mp.weixin.qq.com/s?__biz=MjM5MDk5MzE2Mw==&mid=2527293987&idx=1&sn=baba0350b5d2c1f00093e8b7054fe70a&scene=19#wechat_redirect"
+					name: "FLex布局方法--移动最优布局",
+					url:"http://www.zcfy.cc/article/understanding-flexbox-everything-you-need-to-know-freecodecamp-2471.html"
 				},{
-					name: "css3 checked属性写导航目录",
-					url:"https://segmentfault.com/a/1190000005958412"
-				},{
-					name:"用css3让你的按钮酷炫起来",
-					url:"http://mp.weixin.qq.com/s/EdRSaZYZSwpgNc8jo30jCA"
+					name:"sass语法知识",
+					url:"https://www.w3cplus.com/sassguide/syntax.html"
 				}],
-				"偏代码类": [{
-					name: "谁说前端非得等后端写完api才能开发",
-					url:"http://mp.weixin.qq.com/s/UiZGtUv1BqXfUL51jccT_g"
+				"分享类": [{
+					name: "掘金",
+					url:"https://juejin.im/timeline/frontend"
 				},{
-					name:"使用CommonJS，AMD以及CMD编写模块化JavaScripts",
-					url:"https://segmentfault.com/a/1190000006138597"
-				},{
-					name: "前端开发之单一职责原则",
-					url:"https://segmentfault.com/a/1190000005870557"
-				},{
-					name:"ES6的语法讲解",
-					url:"https://segmentfault.com/a/1190000006712555"
-				},{
-					name: "如何不用for，while循环解决循环问题",
-					url:"https://mp.weixin.qq.com/s?__biz=MjM5MDk5MzE2Mw==&mid=2527294335&idx=1&sn=0ef68e7a0484c9f54b2e230b1ab34fdd&mpshare=1&scene=1&srcid=0927dyOhmnqFK47gTyCHubeg#rd"
-				},{
-					name:"前端解决跨域问题的N种方法之postMessage",
-					url:"https://segmentfault.com/a/1190000007136269"
-				},{
-					name:"用JS学算法之Two Sum",
-					url:"https://zhuanlan.zhihu.com/p/25672735"
-				}],
-				"杂文类": [{
-					name: "好用的sublime text 插件(有空的时候持续更新)",
-					url:"https://segmentfault.com/a/1190000007188586"
-				},{
-					name:"要么 css 牛逼，要么 js 牛逼",
-					url:"http://mp.weixin.qq.com/s?__biz=MjM5MDk5MzE2Mw==&mid=2527294468&idx=1&sn=d35cfa44eb44c6b38fb1dcd38fa186d5&chksm=b5eb8a60829c0376f5e74219768bfad897e335af4fb727dde90ba47cb2282584f5e59f2d689a&mpshare=1&scene=1&srcid=1116Zr82InAZPI1Jr20jz4Dt#rd"
+					name:"segmentfault头条",
+					url:"https://segmentfault.com/news/frontend"
 				}]
 			},
 		}
 		return data
 	},
 	methods:{
-		
+
 	}
 });

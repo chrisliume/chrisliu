@@ -9,19 +9,19 @@
 <body>
 	<div id="main">
 		<header>
-			<div v-for="(_menu ,index) of menu" :class="{'check_menu': index == check_menu}">
+			<div v-for="(_menu ,index) of menu" :class="{'check_menu': index == check_menu}" class="nav_item">
 				<a href="#" @click="show(index)">{{_menu.name}}／{{_menu.e_name}}</a>
 			</div>
 		</header>
 		<v-home :show="menu[0].show"></v-home>
 		<v-article :show="menu[1].show"></v-article>
 		<!-- <v-contact :show="menu[2].show"></v-contact> -->
-		<v-about :show="menu[3].show"></v-about>
+		<v-about :show="menu[2].show"></v-about>
 	</div>
 </body>
 <script src="src/home.js?version=1" type="text/javascript"></script>
 <script src="src/article.js?version=1" type="text/javascript"></script>
-<script src="src/contact.js?version=1" type="text/javascript"></script>
+<!-- <script src="src/contact.js?version=1" type="text/javascript"></script> -->
 <script src="src/about.js?version=1" type="text/javascript"></script>
 <script type="text/javascript">
 var main = new Vue({
@@ -43,8 +43,8 @@ var main = new Vue({
 			// 	show: false
 			// },
 			{
-				name: "关于",
-				e_name: "About",
+				name: "纪念日",
+				e_name: "Anniversary",
 				show: false
 			}],
 			check_menu: 0,
@@ -67,7 +67,7 @@ var main = new Vue({
 		},
 	},
 	mounted:function(){
-		this.show(0);
+		this.show(2);
 	}
 })
 </script>

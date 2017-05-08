@@ -2,12 +2,12 @@ Vue.component('v-home', {
 	template: `<div v-show="show">
 	    <div class="bg" :style='bg_src'></div>
 		<div class="b-title">
-		<transition-group name="list" tag="p">	
+		<transition-group name="list" tag="p">
 		    <span v-for="item in show_key" v-bind:key="item" class="list-item">
 		      {{ item }}
 		    </span>
 	  	</transition-group>
-	  	<transition-group name="list-after" tag="p">	
+	  	<transition-group name="list-after" tag="p">
 		    <span v-for="item in show_key_last" v-bind:key="item" class="list-item2">
 		      {{ item }}
 		    </span>
@@ -20,9 +20,10 @@ Vue.component('v-home', {
 		var data = {
 			check: -1,
 			check_last: -1,
-			bg_src: "background-image: url('img/bg3.jpeg')",
+			bg_src: "background-image: url('img/bg2.jpeg')",
 			keys: ["早睡早起","常做运动"],
-			keys_last: ["多","与","异","性","交","朋","友"],
+			// keys_last: ["多","与","异","性","交","朋","友"],
+			keys_last: ["多","出","门","走","走"],
 			show_key: [],
 			show_key_last: [],
 			timer_keys_last: null,

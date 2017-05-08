@@ -15,7 +15,7 @@
 		</header>
 		<v-home :show="menu[0].show"></v-home>
 		<v-article :show="menu[1].show"></v-article>
-		<v-contact :show="menu[2].show"></v-contact>
+		<!-- <v-contact :show="menu[2].show"></v-contact> -->
 		<v-about :show="menu[3].show"></v-about>
 	</div>
 </body>
@@ -37,11 +37,11 @@ var main = new Vue({
 				e_name: "Article",
 				show: false
 			},
-			{
-				name: "联系我",
-				e_name: "Contact",
-				show: false
-			},
+			// {
+			// 	name: "联系我",
+			// 	e_name: "Contact",
+			// 	show: false
+			// },
 			{
 				name: "关于",
 				e_name: "About",

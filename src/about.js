@@ -7,6 +7,8 @@ Vue.component('v-about', {
 
 				<span class="line2"> {{day}} 天 {{hour}} 时 {{min}} 分 {{mins}} 秒</span><br>
 
+                往后余生，风雪是你，平淡是你，清贫是你，荣华是你，心底温柔是你，目光所至，也是你。
+
 				</div>
 			</div>
 		</div>
